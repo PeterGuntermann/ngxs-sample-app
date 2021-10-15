@@ -1,0 +1,1 @@
+file:**/*.ts||file:**/*.html||file:**/*.json||file:**/*.md||file:**/*.scss

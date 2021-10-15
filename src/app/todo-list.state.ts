@@ -6,11 +6,21 @@ export interface TodoListStateModel {
     todos: Todo[];
 }
 
+const DummyTodos = [
+    new Todo("Wäsche aufhängen"),
+    new Todo("Spülen"),
+    new Todo("Staubsaugen"),
+    new Todo("Zimmer aufräumen"),
+    new Todo("Rasen mähen"),
+];
+
+export const TodoListStateDefaults: TodoListStateModel = {
+    todos: DummyTodos,
+};
+
 @State<TodoListStateModel>({
     name: "todoList",
-    defaults: {
-        todos: [],
-    },
+    defaults: TodoListStateDefaults,
 })
 @Injectable()
 export class TodoListState {

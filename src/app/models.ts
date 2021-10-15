@@ -1,4 +1,3 @@
-export interface Todo {
-    text: string;
-    completed: boolean;
+export class Todo {
+    constructor(public text: string, public completed: boolean = false) {}
 }

@@ -1,0 +1,43 @@
+:host {
+    background: hsl(0, 0%, 90%);
+    display: block;
+    padding: 2rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background: hsl(0, 0%, 80%);
+    padding: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > * {
+        display: block;
+    }
+}
+
+button {
+    border: none;
+    border-radius: 0.25rem;
+    height: 2rem;
+    margin: 0 0.5rem;
+    padding: 0 1rem;
+
+    &.done {
+        background: hsl(123deg 100% 45%);
+    }
+
+    &.remove {
+        background: hsl(10deg 100% 45%);
+    }
+}
+
+.text {
+    flex: 1;
+}

@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { SelectSnapshot, ViewSelectSnapshot } from "@ngxs-labs/select-snapshot";
-import { Select } from "@ngxs/store";
+import { Select, Store } from "@ngxs/store";
+import { Observable } from "rxjs";
 import { TodoListState } from "./todo-list.state";
 
 @Component({
@@ -10,15 +11,13 @@ import { TodoListState } from "./todo-list.state";
 })
 export class AppComponent {
     @Select(TodoListState.dummy)
-    dummy$: any;
+    public dummy$: Observable<string> | undefined;
 
     @SelectSnapshot(TodoListState.dummy)
-    dummySnapshot: any;
+    dummySnapshot: string;
 
     @ViewSelectSnapshot(TodoListState.dummy)
-    dummyViewSnapshot: any;
+    dummyViewSnapshot: string;
 
-    constructor() {
-        this.dummy$.subscribe((s: any) => console.log(s));
-    }
+    constructor(private store: Store) {}
 }

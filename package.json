@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~12.2.9",
     "@angular/platform-browser-dynamic": "~12.2.9",
     "@angular/router": "~12.2.9",
+    "@ngxs-labs/select-snapshot": "^3.0.0",
     "@ngxs/store": "^3.7.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

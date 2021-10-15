@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { SelectSnapshot, ViewSelectSnapshot } from "@ngxs-labs/select-snapshot";
 import { Select } from "@ngxs/store";
 import { TodoListState } from "./todo-list.state";
 
@@ -10,6 +11,12 @@ import { TodoListState } from "./todo-list.state";
 export class AppComponent {
     @Select(TodoListState.dummy)
     dummy$: any;
+
+    @SelectSnapshot(TodoListState.dummy)
+    dummySnapshot: any;
+
+    @ViewSelectSnapshot(TodoListState.dummy)
+    dummyViewSnapshot: any;
 
     constructor() {
         this.dummy$.subscribe((s: any) => console.log(s));

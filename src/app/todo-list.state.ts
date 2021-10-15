@@ -1,20 +1,21 @@
 import { Injectable } from "@angular/core";
 import { Selector, State } from "@ngxs/store";
+import { Todo } from "./models";
 
 export interface TodoListStateModel {
-    dummy: string;
+    todos: Todo[];
 }
 
 @State<TodoListStateModel>({
     name: "todoList",
     defaults: {
-        dummy: "dummy",
+        todos: [],
     },
 })
 @Injectable()
 export class TodoListState {
     @Selector()
-    static dummy(state: TodoListStateModel): string {
-        return state.dummy;
+    static todos(state: TodoListStateModel): Todo[] {
+        return state.todos;
     }
 }

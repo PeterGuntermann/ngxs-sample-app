@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ViewSelectSnapshot } from "@ngxs-labs/select-snapshot";
 import { Store } from "@ngxs/store";
 import { Todo } from "../models";
-import { CompleteTodo } from "../todo-list.actions";
+import { CompleteTodo, DeleteTodo } from "../todo-list.actions";
 import { TodoListState } from "../todo-list.state";
 
 @Component({
@@ -20,6 +20,12 @@ export class TodoListComponent implements OnInit {
 
     onDoneClick(todoId: string) {
         const action = new CompleteTodo();
+        action.id = todoId;
+        this.store.dispatch(action);
+    }
+
+    onDeleteClick(todoId: string) {
+        const action = new DeleteTodo();
         action.id = todoId;
         this.store.dispatch(action);
     }

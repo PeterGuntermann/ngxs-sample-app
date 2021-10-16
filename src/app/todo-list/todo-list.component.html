@@ -1,8 +1,8 @@
 <h1>Todos</h1>
 <ul>
     <li *ngFor="let todo of todos">
-        <span class="completed">{{ todo.completed ? "✔" : "❌" }}</span>
-        <span class="text">{{ todo.text }}</span>
+        <input type="checkbox" disabled [checked]="todo.completed" />
+        <span class="text" [class.completed]="todo.completed">{{ todo.text }}</span>
         <button class="done">Done</button>
         <button class="remove">Remove item</button>
     </li>

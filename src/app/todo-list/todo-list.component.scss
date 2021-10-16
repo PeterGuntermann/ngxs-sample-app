@@ -12,7 +12,7 @@ ul {
 
 li {
     background: hsl(0, 0%, 80%);
-    padding: 0.25rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,11 +22,20 @@ li {
     }
 }
 
+input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem 0 0;
+}
+
+span.completed {
+    text-decoration: line-through;
+}
+
 button {
     border: none;
     border-radius: 0.25rem;
     height: 2rem;
-    margin: 0 0.5rem;
     padding: 0 1rem;
 
     &.done {
@@ -35,6 +44,7 @@ button {
 
     &.remove {
         background: hsl(10deg 100% 45%);
+        margin-left: 0.5rem;
     }
 }
 

@@ -3,7 +3,7 @@
     <li *ngFor="let todo of todos">
         <input type="checkbox" disabled [checked]="todo.completed" />
         <span class="text" [class.completed]="todo.completed">{{ todo.text }}</span>
-        <button class="done" (click)="onDoneClick(todo.id)">Done</button>
-        <button class="remove">Remove item</button>
+        <button class="done" [disabled]="todo.completed" (click)="onDoneClick(todo.id)">Done</button>
+        <button class="remove">Remove</button>
     </li>
 </ul>

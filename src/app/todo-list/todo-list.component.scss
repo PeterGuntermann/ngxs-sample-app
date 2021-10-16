@@ -40,6 +40,10 @@ button {
 
     &.done {
         background: hsl(123deg 100% 45%);
+
+        &[disabled] {
+            background: hsl(123deg 50% 80%);
+        }
     }
 
     &.remove {

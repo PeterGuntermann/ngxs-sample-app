@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Selector, State } from "@ngxs/store";
+import { Action, Selector, State, StateContext } from "@ngxs/store";
 import { Todo } from "./models";
+import { CompleteTodo } from "./todo-list.actions";
 
 export interface TodoListStateModel {
     todos: Todo[];
@@ -27,5 +28,14 @@ export class TodoListState {
     @Selector()
     static todos(state: TodoListStateModel): Todo[] {
         return state.todos;
+    }
+
+    @Action(CompleteTodo)
+    completeTodo(context: StateContext<TodoListStateModel>, action: CompleteTodo) {
+        const state = context.getState();
+        const updatedTodos = state.todos.map((todo) =>
+            todo.id !== action.id ? todo : <Todo>{ ...todo, completed: true }
+        );
+        context.patchState({ todos: updatedTodos });
     }
 }

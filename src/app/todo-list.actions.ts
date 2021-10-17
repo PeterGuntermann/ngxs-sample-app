@@ -1,6 +1,12 @@
 const stateName = "TodoList";
 const actionType = (actionName) => `[${stateName}] ${actionName}`;
 
+export class CreateTodo {
+    static readonly type = actionType("Create Todo");
+
+    constructor(public todoText: string) {}
+}
+
 export class CompleteTodo {
     static readonly type = actionType("Complete Todo");
 

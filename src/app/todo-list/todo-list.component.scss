@@ -55,3 +55,21 @@ button {
 .text {
     flex: 1;
 }
+
+form {
+    margin-top: 0.5rem;
+
+    input {
+        height: 2rem;
+        box-sizing: border-box;
+
+        &[type="text"] {
+            margin-right: 0.5rem;
+            width: 20rem;
+        }
+
+        &[type="submit"] {
+            width: 5rem;
+        }
+    }
+}

@@ -7,3 +7,8 @@
         <button class="delete" (click)="onDeleteClick(todo.id)">Delete</button>
     </li>
 </ul>
+
+<form (ngSubmit)="onAddTodo()">
+    <input type="text" name="newTodo" placeholder="New Todo ..." [(ngModel)]="newTodoValue" />
+    <input type="submit" value="Add" />
+</form>

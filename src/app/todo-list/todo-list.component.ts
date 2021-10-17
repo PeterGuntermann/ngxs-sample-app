@@ -19,14 +19,12 @@ export class TodoListComponent implements OnInit {
     ngOnInit(): void {}
 
     onDoneClick(todoId: string) {
-        const action = new CompleteTodo();
-        action.id = todoId;
+        const action = new CompleteTodo(todoId);
         this.store.dispatch(action);
     }
 
     onDeleteClick(todoId: string) {
-        const action = new DeleteTodo();
-        action.id = todoId;
+        const action = new DeleteTodo(todoId);
         this.store.dispatch(action);
     }
 }

@@ -34,7 +34,7 @@ export class TodoListState {
     completeTodo(context: StateContext<TodoListStateModel>, action: CompleteTodo) {
         const state = context.getState();
         const updatedTodos = state.todos.map((todo) =>
-            todo.id !== action.id ? todo : <Todo>{ ...todo, completed: true }
+            todo.id !== action.todoId ? todo : <Todo>{ ...todo, completed: true }
         );
         context.patchState({ todos: updatedTodos });
     }
@@ -44,7 +44,7 @@ export class TodoListState {
         const state = context.getState();
         const updatedTodos = [];
         state.todos.forEach((todo) => {
-            if (todo.id !== action.id) {
+            if (todo.id !== action.todoId) {
                 updatedTodos.push(todo);
             }
         });

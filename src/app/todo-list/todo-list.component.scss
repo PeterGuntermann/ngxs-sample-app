@@ -33,21 +33,10 @@ span.completed {
 }
 
 button {
-    border: none;
-    border-radius: 0.25rem;
     height: 2rem;
     padding: 0 1rem;
 
-    &.done {
-        background: hsl(123deg 100% 45%);
-
-        &[disabled] {
-            background: hsl(123deg 50% 80%);
-        }
-    }
-
     &.delete {
-        background: hsl(10deg 100% 45%);
         margin-left: 0.5rem;
     }
 }
